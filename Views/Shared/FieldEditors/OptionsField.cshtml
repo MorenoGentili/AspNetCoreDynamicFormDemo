@@ -1,0 +1,2 @@
+@model OptionsField
+<select asp-items="@Model.Options.ToSelectListItem(Model.SelectedValue)" class="form-control" asp-for="SelectedValue"></select>
