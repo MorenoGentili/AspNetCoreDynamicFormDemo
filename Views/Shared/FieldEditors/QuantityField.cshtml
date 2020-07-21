@@ -1,0 +1,21 @@
+@model QuantityField
+@{
+    var presetQuantities = new [] {1, 2, 5, 10};
+    bool isValueInPresetQuantites = presetQuantities.Contains(Model.Quantity);
+    string selectDisplay = isValueInPresetQuantites ? "initial" : "none";
+    string inputDisplay = isValueInPresetQuantites ? "none" : "initial";
+}
+<select class="form-control" onchange="this.nextElementSibling.value = this.value; this.style.display = this.value ? 'initial' : 'none'; this.nextElementSibling.style.display = this.value ? 'none' : 'initial'" style="display: @selectDisplay">
+    @foreach(var quantity in presetQuantities) {
+        if (Model.Quantity == quantity)
+        {
+            <option value="@quantity" selected>@quantity</option>
+        }
+        else
+        {
+            <option value="@quantity">@quantity</option>
+        }
+    }
+    <option value="">Other</option>
+</select>
+<input type="number" class="form-control" placeholder="Quantity" asp-for="Quantity" required style="display: @inputDisplay">

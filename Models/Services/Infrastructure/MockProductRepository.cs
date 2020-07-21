@@ -34,7 +34,8 @@ namespace AspNetCoreDynamicForm.Models.Services.Infrastructure
                     new ColorField { Name = "Secondary color", Color = "#FFFF00" },
                     new TextField { Name = "Text on the front", Text = "Darmok and Jalad at Tanagra" },
                     new TextField { Name = "Text on the back", Text = "Alpha quadrant tour 1991" },
-                    new OptionsField { Name = "Material", Options = new [] { "Linen", "Cotton", "Lycra" }, SelectedValue = "Cotton" }
+                    new OptionsField { Name = "Material", Options = new [] { "Linen", "Cotton", "Lycra" }, SelectedValue = "Cotton" },
+                    new QuantityField { Name = "Quantity", Quantity = 1 }
                 }}
             };
         }
